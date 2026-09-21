@@ -1,28 +1,34 @@
 <?php
 require_once 'config/routes.php';
+
 $url = $_GET['url'] ?? '';
 if ($url == '') {
     $url = $route['default_controller'] . '/index';
 }
+
 $url = trim($url, '/');
 $segment = explode('/', $url);
+
 $controller = $segment[0] ?? $route['default_controller'];
 $method     = $segment[1] ?? 'index';
-$parameter  = $segment[2] null;
+$parameters = array_slice($segment, 2); // ambil semua parameter setelah method
+
 $controllerName = ucfirst($controller);
 $controllerFile = 'controller/' . $controllerName . '.php';
+
 if (file_exists($controllerFile)) {
     require_once $controllerFile;
-    $objController = new $controllerName();
-    if (method_exists($objController, $method)) {
-        if ($parameter !== null) {
-            $objController->$method($parameter);
+    if (class_exists($controllerName)) {
+        $objController = new $controllerName();
+        if (method_exists($objController, $method)) {
+            // panggil method dengan semua parameter
+            call_user_func_array([$objController, $method], $parameters);
         } else {
-            $objController->$method();
+            echo ("Method '$method' tidak ditemukan di controller $controllerName.");
         }
     } else {
-        echo "method tidak ditemukan.";
+        echo ("Class controller '$controllerName' tidak ditemukan.");
     }
-    } else {
-        echo "Controller tidak ditemukan.";
-    }
+} else {
+    echo ("File controller '$controllerFile' tidak ditemukan.");
+}
