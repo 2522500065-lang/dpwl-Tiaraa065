@@ -5,7 +5,7 @@ class latihan1Model
     {
         return [
             ['nama' => 'Tiara', 'nim' => '2522500065' ],
-            ['nama' => 'suci', 'nim' => '2522500057'];
+            ['nama' => 'suci', 'nim' => '2522500057'],
             ['nama' => 'prita', 'nim' => '2522500076']
         ];
     }
