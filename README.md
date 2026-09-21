@@ -1,2 +1,2 @@
 # dpwl-Tiaraa065
-Repository latihan Pemprograman Web dari pertemuan 1 sampai dengan pertemuan 16
+Repository Latihan Pertemuan-01 Matakuliah Desain dan Pemrograman Web Lanjut Kelompok SI3J Tahun Ajaran 2026/2027 Semester Ganjil
