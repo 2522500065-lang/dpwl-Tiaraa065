@@ -1,2 +1,2 @@
 <?php
-$config['base_url'] = 'http://localhost/dpwl-Tiara065/';
+$config['base_url'] = ['http://localhost/dpwl-Tiara065/'];
