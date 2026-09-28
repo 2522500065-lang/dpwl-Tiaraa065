@@ -1,4 +1,4 @@
 <?php
 $route = [
-'default_controller' => 'Latihan1Model'
+'default_controller' => 'Latihan1Model.php'
 ];
