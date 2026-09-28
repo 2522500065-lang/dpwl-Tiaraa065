@@ -1,4 +1,4 @@
 <?php
 $route = [
-'default_controller' => 'Latihan1Model.php'
+'[$http://localhost/dpwl-Tiara065/]' => 'Latihan1Model.php'
 ];
