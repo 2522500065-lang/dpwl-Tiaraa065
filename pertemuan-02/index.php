@@ -1,5 +1,9 @@
 <?php
 require_once 'config/routes.php';
+require_once 'config/config.php';
+require_once 'config/routes.php';
+require_once 'helper/url_helper.php';
+
 $url = $_GET['url'] ?? '';
 if ($url == '') {
     $url = $route['default_controller'] . '/index';
@@ -27,7 +31,3 @@ if (file_exists($controllerFile)) {
 } else {
     echo "Controller tidak ditemukan.";
 }
-
-require_once 'config/config.php';
-require_once 'config/routes.php';
-require_once 'helper/url_helper.php';
