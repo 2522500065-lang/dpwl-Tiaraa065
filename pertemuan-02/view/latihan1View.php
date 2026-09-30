@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Mahasiswa</title>
 </head>
 <body>
@@ -10,7 +10,7 @@
     <?php
     $i = 1;
     foreach ($datamhs as $mhs) {
-        echo $i++ . '.' . $mhs['nim'] . '<br>';
+        echo $i++ . '. ' . $mhs['nama'] . ' ' . $mhs['nim'] . '<br>';
     }
     ?>
 </body>
