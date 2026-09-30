@@ -1,4 +1,2 @@
 <?php
-$route = [
-['http://localhost/dpwl-Tiara065/'] => 'Latihan1Model.php'
-];
+$route['default_controller'] = 'Latihan1Controller';
