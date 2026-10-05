@@ -3,7 +3,6 @@ class Controller
 {
     public function __construct()
     {
-        $this->session = new session();
         $this->load = new class {
             public function view($viewName, $data = [])
             {
