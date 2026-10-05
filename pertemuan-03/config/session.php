@@ -8,26 +8,26 @@ class Session
 
     public function set_userdata($key, $value)
     {
-        $_SESSION[$key] = $value;
+        $_session[$key] = $value;
     }
 
     public function userdata($key)
     {
-        return $_SESSION[$key] ?? null;
+        return $_session[$key] ?? null;
     }
 
     public function unset_userdata($key)
     {
-        unset($_SESSION[$key]);
+        unset($_session[$key]);
     }
 
     public function set_flashdata($key, $value = null)
     {
         if ($value !== null) {
-            $_SESSION['_flash'][$key] = $value;
+            $_session['_flash'][$key] = $value;
         } else {
-            $data = $_SESSION['_flash'][$key] ?? null;
-            unset($_SESSION['_flash'][$key]);
+            $data = $_session['_flash'][$key] ?? null;
+            unset($_session['_flash'][$key]);
             return $data;
         }
     }
