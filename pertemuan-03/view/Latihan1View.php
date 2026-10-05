@@ -10,7 +10,7 @@
     <?php
     $i = 1;
     foreach ($datamhs as $mhs) {
-        echo $i++ . '. ' . $mhs['no'] . ' ' . $mhs['nama'] . ' ' . $mhs['nim'] . ' ' . $mhs['alamat'] . ' ' . $mhs['no.telp'] . '<br>';
+        echo $i++ . '. ' . $mhs['nama'] . ' ' . $mhs['nim']  . '<br>';
     }
     ?>
 </body>
