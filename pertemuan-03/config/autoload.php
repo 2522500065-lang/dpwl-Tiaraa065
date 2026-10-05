@@ -1,4 +1,5 @@
 <?php
+require_once 'core/Controller.php';
 spl_autoload_register(function ($namacontroller) {
     $paths = ['controller/', 'model/', 'config/', 'core/'];
 
