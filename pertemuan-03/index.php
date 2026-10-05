@@ -1,22 +1,21 @@
 <?php
+require_once 'config/autoload.php';
 require_once 'config/routes.php';
-require_once 'config/config.php';
-require_once 'core/Controller.php';
 
-
-$url = $_GET['url'] ?? '';
+$url = $_GET['url'] ?? $route['default_controller'] . '/' . $route['default_method'];
 if ($url == '') {
     $url = $route['default_controller'] . '/index';
 }
 $url = trim($url, '/');
 $segment = explode('/', $url);
 $controller = $segment[0] ?? $route['default_controller'];
-$method     = $segment[1] ?? 'index';
-$parameter  = $segment[2] ?? null;
+$method = $segment[1] ?? 'index';
+$parameter = $segment[2] ?? null;
 
-$controllerName = ucfirst($controller);
+//$controllerName = ucfirst($controller);
+$controllerName = ucfirst($segment[0]);
 $controllerFile = 'controller/' . $controllerName . '.php';
-if (file_exists($controllerFile)) {
+//if (file_exists($controllerFile)) {
     require_once $controllerFile;
     $objController = new $controllerName();
     if (method_exists($objController, $method)) {
@@ -28,6 +27,6 @@ if (file_exists($controllerFile)) {
     } else {
         echo "Method tidak ditemukan.";
     }
-} else {
+//} else {
     echo "Controller tidak ditemukan.";
-}
+//}
