@@ -1,6 +1,6 @@
 <?php
 spl_autoload_register(function ($namacontroller) {
-    $paths = ['controller/', 'model/', 'config/'];
+    $paths = ['controller/', 'model/', 'config/', 'session/'];
 
     foreach ($paths as $path) {
         $file = $path . $namacontroller . '.php';
