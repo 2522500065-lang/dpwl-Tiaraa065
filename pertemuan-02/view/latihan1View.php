@@ -22,7 +22,6 @@
         </tr>
         <?php endforeach; ?>
     </table>
-    <hr>
-    Admin, <?= htmlspecialchars($nama_user) ?>
+    </hr>
 </body>
 </html>
