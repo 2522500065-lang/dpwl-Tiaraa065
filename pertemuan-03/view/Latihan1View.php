@@ -17,19 +17,16 @@
             <th>Telp</th>
         </tr>
         
-        <?php foreach ($datamhs as $mhs): ?>
-            <tr> 
-            <? {
+        <?php foreach ($datamhs as $mhs) { ?>
+    <tr>
+        <td><?= $mhs['nim']; ?></td>
+        <td><?= $mhs['nama']; ?></td>
+        <td><?= $mhs['alamat']; ?></td>
+        <td><?= $mhs['telp']; ?></td>
+    </tr>
+<?php } ?>
+</table>
 
-            echo "<td>" . $mhs['nim'] . "</td>";
-            echo "<td>" .$mhs['nama'] . "</td>";
-            echo "<td>" .$mhs['alamat'] . "</td>";
-            echo "<td>" .$mhs['telp'] . "</td>";
-            echo "</tr>";
-        }
-        ?>
-    </table>
-    Admin, <?= htmlspecialchars($nama_user) ?>
+Admin, <?= htmlspecialchars($nama_user) ?>
 </body>
-
 </html>
