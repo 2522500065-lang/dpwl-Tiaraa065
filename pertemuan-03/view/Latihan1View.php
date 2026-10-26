@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 </html>
+
 <head>
     <meta charset="UTF-8">
     <title>Daftar Mahasiswa</title>
 </head>
+
 <body>
     <h2>Daftar Mahasiswa</h2>
     <table border="1" cellpadding="5" cellspacing="0">
@@ -14,16 +16,20 @@
             <th>Alamat</th>
             <th>Telp</th>
         </tr>
+        
         <?php foreach ($datamhs as $mhs): ?>
-        <tr>
-            <td><?= htmlspecialchars($mhs['nim']) ?></td>
-            <td><?= htmlspecialchars($mhs['nama']) ?></td>
-            <td><?= htmlspecialchars($mhs['alamat']) ?></td>
-            <td><?= htmlspecialchars($mhs['telp']) ?></td>
-        </tr>
-        <?php endforeach; ?>
+            <tr> 
+            <? {
+
+            echo "<td>" . $mhs['nim'] . "</td>";
+            echo "<td>" .$mhs['nama'] . "</td>";
+            echo "<td>" .$mhs['alamat'] . "</td>";
+            echo "<td>" .$mhs['telp'] . "</td>";
+            echo "</tr>";
+        }
+        ?>
     </table>
-    <hr>
-    Admin, <?= htmlspecialchars() ?>
+    Admin, <?= htmlspecialchars($nama_user) ?>
 </body>
+
 </html>
