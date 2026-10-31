@@ -5,10 +5,10 @@ class Login_C extends controller
     {
         $this->load->view('login');
     }
-    public function ceklogin()
+    public function CekLogin()
     {
-        $email = $_POST['email'];
-        $password = $_POST['pass'];
+        $email = $_POST['Email'];
+        $password = $_POST['Pass'];
         echo "Email" . $email . " dan " . $password . " Password Anda";
     }
 }
