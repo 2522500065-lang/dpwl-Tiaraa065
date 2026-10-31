@@ -1,4 +1,5 @@
 <?php
+
 require_once 'config/autoload.php';
 require_once 'config/routes.php';
 require_once 'config/config.php';
@@ -6,6 +7,7 @@ require_once 'helper/url_helper.php';
 
 $url = $_GET['url'] ?? $route['default_controller'] . '/' . $route['default_method'];
 
+$url = trim($url, '/');
 $segment = explode('/', $url);
 
 $controller = $segment[0] ?? $route['default_controller'];
@@ -32,13 +34,13 @@ if (file_exists($controllerFile)) {
             }
 
         } else {
-            echo "Method tidak ditemukan.";
+            echo "Method tidak ditemukan: " . $method;
         }
 
     } else {
-        echo "Class $controllerName tidak ditemukan.";
+        echo "Class tidak ditemukan: " . $controllerName;
     }
 
 } else {
-    echo "Controller tidak ditemukan.";
+    echo "Controller tidak ditemukan: " . $controllerFile;
 }
