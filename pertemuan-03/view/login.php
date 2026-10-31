@@ -16,19 +16,23 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Silakan masuk untuk memulai sesi</p>
+      <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="auth/ceklogin" method="post">
+      <form action="<?= base_url('Login_C/ceklogin') ?> method="post">
         <div class="input-group mb-3">
-          <input type="text" name="username" class="form-control" placeholder="Username" required>
+          <input type="email" class="form-control" placeholder="email" name="email" required>
           <div class="input-group-append">
-            <div class="input-group-text"><span class="fas fa-user"></span></div>
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control" placeholder="Password" required>
+          <input type="password" class="form-control" placeholder="Password" name="pass" required>
           <div class="input-group-append">
-            <div class="input-group-text"><span class="fas fa-lock"></span></div>
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
           </div>
         </div>
         <div class="row">
