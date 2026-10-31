@@ -1,34 +1,24 @@
 <?php
 
-class Login_C {
+class Login_C
+{
+    public function index()
+    {
+        require_once 'view/login.php';
+    }
 
-    public function CekLogin() {
+    public function login()
+    {
+        $email = $_POST['email'] ?? '';
+        $password = $_POST['password'] ?? '';
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            $email = $_POST['Email'] ?? '';
-            $password = $_POST['Pass'] ?? '';
-
-            if ($email == '' || $password == '') {
-                echo "Email dan Password harus diisi";
-            } else {
-                echo "Login berhasil diproses";
-            }
-
+        if (
+            $email == '2522500065@mahasiswa.atmaluhur.ac.id' &&
+            $password == 'tiara28062007'
+        ) {
+            echo "Login Berhasil";
         } else {
-            echo "Silakan gunakan formulir login";
+            echo "Email atau Password Salah";
         }
     }
 }
-
-$login = new Login_C();
-
-$method = $_GET['method'] ?? '';
-
-if ($method == 'CekLogin') {
-    $login->CekLogin();
-} else {
-    echo "Method tidak ditemukan. CekLogin";
-}
-
-?>
