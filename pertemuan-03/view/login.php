@@ -20,7 +20,7 @@
 
       <form action="<?= base_url('Login_C/ceklogin') ?> method="post">
         <div class="input-group mb-3">
-          <input type="Email" class="form-control" placeholder="Email" name="Email" required>
+          <input type="email" class="form-control" placeholder="email" name="email" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="Password" class="form-control" placeholder="Password" name="pass" required>
+          <input type="password" class="form-control" placeholder="password" name="pass" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
