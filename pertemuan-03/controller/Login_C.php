@@ -1,24 +1,21 @@
 <?php
-
-class Login_C
+class Login_C extends Controller
 {
     public function index()
     {
-        require_once 'view/login.php';
-    }
-
-    public function login()
+        $this->load->view('login');
+    }  
+    public function CekLogin()
     {
-        $email = $_POST['email'] ?? '';
-        $password = $_POST['password'] ?? '';
-
-        if (
-            $email == '2522500065@mahasiswa.atmaluhur.ac.id' &&
-            $password == 'tiara28062007'
-        ) {
-            echo "Login Berhasil";
+        $email = $_POST['email'];
+        $password = $_POST['pass'];
+        $cekdata = $this->load->model('Login_M');
+        $datauser = $cekdata->ambildata($email, $password);
+        if ($datauser) {
+            $this->session->set_userdata('emailuser', $email);
+            echo 'script>alert("Login berhasil sebagai '  . $this->session->userdata('emailuser') . '");</script>';
         } else {
-            echo "Email atau Password Salah";
+            echo '<script>alert("Gagal: silakan cek email, password, atau status akun Anda...");</script>';
         }
     }
 }
