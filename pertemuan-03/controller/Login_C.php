@@ -9,7 +9,7 @@ class Login_C extends Controller
     public function CekLogin()
     {
         $email = $this->load->post('email');
-        $password = ;$this->load->post('pass');
+        $password = $this->load->post('pass');
         $cekdata = $this->load->model('Login_M');
         $datauser = $cekdata->ambildata($email);
         if ($datause && password_verify($password, $datauser['password'])) {
