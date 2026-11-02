@@ -1,4 +1,0 @@
-
-<?php
-
-$config['base_url'] = 'http://localhost/dpwl_Tiara065/UTS/';
