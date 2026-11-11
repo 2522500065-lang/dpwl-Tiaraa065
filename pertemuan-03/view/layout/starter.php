@@ -1,5 +1,6 @@
-
-
+<!DOCTYPE html>
+<!--
+This is a stater template page to start your new project from scratch. thia page gets rid of all links and provides the needed markup only. 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
