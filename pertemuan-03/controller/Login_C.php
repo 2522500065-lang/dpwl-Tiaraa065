@@ -3,20 +3,29 @@ class Login_C extends Controller
 {
     public function index()
     {
-        // Mengambil pesan flashdata agar alert error bisa muncul di halaman login
         $dt['psn'] = $this->session->flashdata('pesan');
         $this->load->view('v_login', $dt);
     }
 
     public function CekLogin()
     {
-        $username = $this->load->post('username'); 
-        $password = $this->load->post('password');
+        // 1. Ambil input dari form POST
+        $username = $_POST['username'] ?? ''; 
+        $password = $_POST['password'] ?? '';
         
-        $cekdata = $this->load->model('Login_M');
+        // 2. Inisialisasi Model Login_M
+        $cekdata  = new Login_M();
         $datauser = $cekdata->ambildata($username);
         
-        // Cek password baik dalam bentuk plaintext maupun hash
+        // 3. Tampilkan data untuk debugging
+        echo "<pre>";
+        echo "<b>Username Input Form:</b> " . htmlspecialchars($username) . "<br>";
+        echo "<b>Password Input Form:</b> " . htmlspecialchars($password) . "<br><br>";
+        echo "<b>Data dari Database (Tabel 'admin'):</b><br>";
+        var_dump($datauser);
+        echo "</pre>";
+        die(); // Hentikan eksekusi di sini untuk melihat hasilnya di browser
+
         if ($datauser && ($password == $datauser['password'] || password_verify($password, $datauser['password']))) {
             $this->session->set_userdata('username', $username);
             $this->session->set_flashdata('pesan', 'Login berhasil sebagai ' . $username);
