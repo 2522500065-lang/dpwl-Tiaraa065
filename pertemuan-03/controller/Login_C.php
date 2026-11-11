@@ -10,19 +10,19 @@ class Login_C extends Controller
 
     public function CekLogin()
     {
-        $username = $this->load->post('username'); 
-        $password = $this->load->post('password');
+        $email = $this->load->post('email'); 
+        $password = $this->load->post('pass');
         
         $cekdata = $this->load->model('Login_M');
-        $datauser = $cekdata->ambildata($username);
+        $datauser = $cekdata->ambildata($email);
         
         // Cek password baik dalam bentuk plaintext maupun hash
         if ($datauser && ($password == $datauser['password'] || password_verify($password, $datauser['password']))) {
-            $this->session->set_userdata('username', $username);
-            $this->session->set_flashdata('pesan', 'Login berhasil sebagai ' . $username);
+            $this->session->set_userdata('username', $email);
+            $this->session->set_flashdata('pesan', 'Login berhasil sebagai ' . $email);
             redirect('Admin_C/index');
         } else {
-            $this->session->set_flashdata('pesan', 'Gagal: Silahkan cek username atau password Anda!');
+            $this->session->set_flashdata('pesan', 'Gagal: Silahkan cek email atau password Anda!');
             redirect('Login_C/index');
         }
     }
