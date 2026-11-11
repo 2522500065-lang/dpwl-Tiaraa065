@@ -33,7 +33,7 @@
       <form action="<?= base_url('Login_C/CekLogin')?>" method="post">
         <div class="input-group mb-3">
           <!-- Disesuaikan: name="username" -->
-          <input type="text" class="form-control" placeholder="Username / Email" name="username" required>
+          <input type="text" class="form-control" placeholder="Email" name="email" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -42,7 +42,7 @@
         </div>
         <div class="input-group mb-3">
           <!-- Disesuaikan: name="password" -->
-          <input type="password" class="form-control" placeholder="Password" name="password" required>
+          <input type="password" class="form-control" placeholder="Password" name="pass" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
